@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pamela Mtanga</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Loader -->
+    <div id="loader">
+      <video autoplay muted playsinline id="loaderVideo">
+        <source src="images/Loader.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <!-- Navbar -->
+    <nav>
+      <a href="#home" class="navbar-brand"><em>Pamela Mtanga</em></a>
+      <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+      <div class="hero-left">
+        <img src="images/PamM-removebg-preview.png" alt="Pamela Mtanga" />
+      </div>
+      <div class="hero-right">
+        <div class="hero-text">
+          <h1>
+            <span class="first-name">Pamela</span>
+            <span class="last-name">Mtanga</span>
+          </h1>
+          <img
+            src="images/Cream_and_Beige_Illustrative_Background_Portrait_Document_A4-removebg-preview.png"
+            alt="Pamela Mtanga"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+        <section id="about">
+  <h2 class="about-name">Pamela Mtanga</h2>
+  <div class="about-content">
+    
+    <!-- Left media -->
+    <div class="about-video-wrapper">
+      <video class="about-video" 
+      autoplay
+      muted
+      loop>
+        <source src="images/Pam.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
+    
+    <!-- Paragraph -->
+    <p>
+      <em>
+        Hi, I’m Pamela Mtanga — media personality, content creator, and storyteller passionate about connecting brands to audiences in meaningful ways. <br />
+        From hosting red-carpet events to creating engaging digital content, I’ve built a career on authenticity, versatility, and inspiring others. I’ve partnered with leading brands across beauty, fashion, lifestyle, and entertainment, delivering campaigns that truly resonate. <br />
+        Beyond the camera, I’m committed to empowering young women, showing that vision, consistency, and hard work can turn dreams into reality. This space showcases my latest work, collaborations, and projects — all vibrant, impactful, and unapologetically me.
+      </em>
+    </p>
+    
+    <!-- Right image (handbag) -->
+    <div class="image-content">
+      <img src="images/download (6).jpeg" alt="Pamela Mtanga with handbag" class="section-image">
+    </div>
+    
+  </div>
+</section>
+
+    <!-- Portfolio -->
+    <section id="portfolio">
+      <div class="portfolio-tabs">
+        <button class="tab-button active" data-tab="brand">
+          Brand Collaborations
+        </button>
+        <button class="tab-button" data-tab="media">Media & Hosting</button>
+        <button class="tab-button" data-tab="creative">
+          Projects & Awards
+        </button>
+      </div>
+
+      <div class="portfolio-slider" id="slider">
+        <div class="slider-item">
+          <h3>Adidas</h3>
+          <img src="images/Adidas.jpg" alt="Brand Collaboration1" />
+          <p>Short description here.</p>
+        </div>
+        <div class="slider-item">
+          <h3>Sprite</h3>
+          <img src="images/Sprite.jpg" alt="Brand Collaboration2" />
+          <p>Short description here.</p>
+        </div>
+        <div class="slider-item">
+          <h3>Kylie Cosmetics</h3>
+          <img src="images/Kylie.jpg" alt="Brand Collaboration3" />
+          <p>Short description here.</p>
+        </div>
+      </div>
+
+      <div class="slider-controls">
+        <button id="prev-slide">&#10094;</button>
+        <button id="next-slide">&#10095;</button>
+      </div>
+    </section>
+
+    <section id="contact">
+  <div class="contact-container">
+    <!-- Heading -->
+    <h2>Let’s Work Together</h2>
+
+    <!-- Wrapper for form + image -->
+    <div class="contact-wrapper">
+      <!-- Contact form -->
+      <form id="contactForm" action="contact.php" method="POST">
+        <input type="text" name="name" placeholder="Your Name" required />
+        <input type="email" name="email" placeholder="Your Email" required />
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+        <p id="formMessage"></p>
+      </form>
+
+      <!-- Background image -->
+      <div class="contact-image"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="footer">
+  <div class="footer-container">
+    <!-- Name -->
+    <div class="footer-name">
+      <h3>Pamela Ntanga</h3>
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="footer-socials">
+      <a href="https://www.instagram.com/pamela_mtanga?igsh=MWFycHVvaWx5d2lyZQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.tiktok.com/@pamela_mtanga?_t=ZS-8yu3LUwQSBU&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+      <a href="https://m.youtube.com/@pamela_mtanga?fbclid=PAY2xjawMMRotleHRuA2FlbQIxMAABpzfSLV0evIjZgqjZNPVm17usXrr_6q7NtTdoYloJsRgTyYnfNFfYSeQrn8Lp_aem_tYV6BYu6cHOJqNBe40qvSA" target="_blank"><i class="fab fa-youtube"></i></a>
+    </div>
+
+    <!-- Navbar Links -->
+    <div class="footer-nav">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#portfolio">Portfolio</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    <!-- Bottom Note -->
+    <div class="footer-bottom">
+      &copy; 2025 Pamela Ntanga. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+
+    <script src="script.js"></script>
+  </body>
+</html>

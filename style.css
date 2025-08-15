@@ -1,0 +1,654 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #f8f5f2;
+    color: #222;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+img, video {
+    max-width: 100%;
+    display: block;
+}
+
+/* =========================
+   Loader
+========================= */
+#loader {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    transition: opacity 0.5s ease; /* smooth fade */
+}
+#loader video {
+    width: 150px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+/* =========================
+   Navbar
+========================= */
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    z-index: 1000;
+}
+
+nav .navbar-brand {
+    font-family: "Playfair Display", serif;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #b38b59;
+    text-decoration: none;
+}
+
+nav ul {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+nav ul li a {
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #b38b59;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #b38b59;
+}
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: white;
+  position: relative;
+  overflow: hidden;
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.hero-left,
+.hero-right {
+  flex: 1;
+  position: relative;
+}
+
+.hero-left img {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Vertical Divider */
+.hero::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  bottom: 10%;
+  width: 2px;
+  background-color: #ccc;
+}
+
+/* Name Styling */
+.hero-text {
+  position: relative;
+  text-align: left;
+  padding-left: 50px;
+  z-index: 1;
+}
+
+.hero-text h1 {
+  font-size: 4rem;
+  font-weight: normal;
+  margin: 0;
+  margin-top: 0;
+  line-height: 1.1;
+}
+
+.first-name {
+  font-family: 'Georgia', serif;
+  font-size: 3rem;
+  color: #000;
+  display: block;
+}
+
+.last-name {
+  font-family: 'Pacifico', cursive; /* or another script font */
+  font-size: 4.5rem;
+  color: #c77b48;
+  display: inline-block;
+  margin-top: -20px;
+}
+
+/* Background Portrait on Right */
+.hero-text img {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  max-width: 80%;
+  opacity: 0.4;
+  z-index: -1;
+}
+
+/* About Section - High End Version */
+#about {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  color: #333;
+  background-color: #fff;
+  font-family: "Playfair Display", serif;
+  position: relative;
+}
+
+/* Centered Name */
+.about-name {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  color: #b38b59;
+  margin-bottom: 50px;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.about-name::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #b38b59;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Flex container for paragraph, video, image */
+.about-content {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 50px;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+/* Paragraph */
+.about-content p {
+  flex: 1 1 400px;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  max-width: 600px;
+  text-align: center;
+  color: #555;
+  z-index: 2;
+  position: relative;
+  margin-top: 50px;
+}
+
+/* Video Wrapper */
+.about-video-wrapper {
+  flex: 0 0 150px;
+  max-width: 100%;
+  transition: transform 0.3s ease;
+}
+
+.about-video-wrapper:hover {
+  transform: scale(1.03);
+}
+
+.about-video {
+  flex: 0 0 auto;
+  width: 280px;
+  height: auto;
+  max-width: 300px;
+  height: auto;
+  border-radius: 12px;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  top: -30px;
+  z-index: 1;
+}
+
+/* Image */
+.image-content {
+  flex: 0 0 400px;
+  max-width: 60%;
+  display: flex;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.image-content:hover {
+  transform: scale(1.03);
+}
+
+.section-image {
+  flex: 0 0 auto;
+  width: 280px;
+  height: auto;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  position: relative;
+  top: 30px; /* slight vertical offset for visual layering */
+  z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-content {
+    flex-wrap: wrap;
+    gap: 30px;
+  }
+
+  .about-content p {
+    text-align: justify;
+  }
+}
+
+/* =========================
+   Portfolio
+========================= */
+#portfolio {
+    padding: 5rem 5%;
+    background-color: #f8f5f2;
+}
+
+.portfolio-tabs {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.tab-button {
+    padding: 0.8rem 1.5rem;
+    background: transparent;
+    border: 1px solid #b38b59;
+    font-size: 1rem;
+    color: #b38b59;
+    border-radius: 50px;
+    margin: 0 0.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tab-button.active,
+.tab-button:hover {
+    background: #b38b59;
+    color: #fff;
+}
+
+.portfolio-slider {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 1rem;
+}
+
+.portfolio-slider::-webkit-scrollbar {
+    display: none; /* hides scrollbar for a cleaner look */
+}
+
+.slider-item {
+    flex: 0 0 300px;
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.slider-controls {
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.slider-controls button {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #b38b59;
+    cursor: pointer;
+}
+
+/* =========================
+   Contact
+========================= */
+/* =========================
+   Contact Section
+========================= */
+#contact {
+    padding: 5rem 5%;
+    background: #fff;
+    text-align: center;
+    position: relative;
+}
+
+/* Heading */
+#contact h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #b38b59;
+}
+
+/* Container for heading + wrapper */
+.contact-container {
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+    text-align: center;
+}
+
+/* Wrapper for form + image */
+.contact-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    max-width: 800px;
+    margin: auto;
+}
+
+/* Contact Form Styling */
+#contactForm {
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2; /* Above image */
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Form Inputs */
+#contactForm input,
+#contactForm textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+#contactForm input:focus,
+#contactForm textarea:focus {
+    border-color: #b38b59;
+    box-shadow: 0 0 5px rgba(179, 139, 89, 0.5);
+    outline: none;
+}
+
+/* Submit Button */
+#contactForm button {
+    background: #b38b59;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+#contactForm button:hover {
+    background: #946c3a;
+    transform: translateY(-2px) scale(1.03);
+}
+
+/* Success/Error Message */
+#formMessage {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #b38b59;
+}
+
+/* Background Image */
+.contact-image {
+    background: url('images/Gorgeous.png') no-repeat center;
+    background-size: cover;
+    width: 300px;
+    height: 400px;
+    position: absolute;
+    left: -80px; /* peek behind form */
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 12px;
+    z-index: 1;
+    opacity: 0.9;
+    transition: all 0.5s ease;
+}
+
+/* Hover effect for image (optional subtle zoom) */
+.contact-image:hover {
+    transform: translateY(-50%) scale(1.02);
+}
+
+/* =========================
+   Responsive Adjustments
+========================= */
+@media (max-width: 992px) {
+    .contact-wrapper {
+        max-width: 700px;
+    }
+    .contact-image {
+        width: 250px;
+        height: 350px;
+        right: -40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-wrapper {
+        flex-direction: column;
+    }
+    .contact-image {
+        position: relative;
+        right: 0;
+        top: 0;
+        transform: none;
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+        margin-top: 1.5rem;
+    }
+    #contactForm {
+        max-width: 100%;
+    }
+}
+
+/* Form container */
+.contact-form-wrapper {
+    flex: 1 1 400px;
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+/* Form styling with overlap effect */
+form {
+    flex: 1 1 400px;
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 12px;
+    position: relative;
+    z-index: 2; /* Makes sure it's above the image */
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+}
+
+#contactForm input, 
+#contactForm textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-family: inherit;
+    font-size: 16px;
+}
+
+#contactForm button {
+    background: #b38b59;
+    color: white;
+    padding: 0.8rem 2rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 16px;
+}
+
+#contactForm button:hover {
+    background: #946c3a;
+}
+
+/* Success/Error message */
+#formMessage {
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #b38b59;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        padding: 2rem 1rem;
+    }
+    .contact-image {
+        position: relative;
+        left: 0;
+        top: 0;
+        transform: none;
+        width: 100%;
+        max-width: 300px;
+        height: 300px;
+        margin-bottom: 1.5rem;
+    }
+}
+
+#footer {
+  background: #f5f2ed;
+  color: #b38b59;
+  padding: 2rem 5%;
+  text-align: center;
+  border-top: 1px solid #ddd;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-name h3 {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: #b38b59;
+  margin-bottom: 1rem;
+}
+
+.footer-socials {
+  margin: 1rem 0;
+}
+
+.footer-socials a {
+  color: #b38b59;
+  font-size: 1.5rem;
+  margin: 0 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.footer-socials a:hover {
+  color: #946c3a;
+}
+
+.footer-nav {
+  margin: 1.5rem 0;
+}
+
+.footer-nav a {
+  display: inline-block;
+  text-decoration: none;
+  padding: 0.3rem 0.6rem;
+  color: #b38b59;
+  margin: 0 0.8rem;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #b38b59;
+}
+
+.footer-quote {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #b38b59;
+  margin: 1rem 0;
+}
+
+.footer-bottom {
+  font-size: 0.85rem;
+  color: #c77b48;
+  margin-top: 1.5rem;
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+  .footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .footer-nav a {
+    margin: 0.5rem;
+  }
+}
+
+/* =========================
+   Animations
+========================= */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
