@@ -134,3 +134,52 @@ contactForm.addEventListener('submit', function(e) {
     });
 });
 
+async function loadStats() {
+  try {
+    const res = await fetch("http://localhost:5000/api/stats", {
+      headers: { "x-api-key": "my-secret-token" }
+    });
+    if (!res.ok) throw new Error("Failed to fetch stats");
+
+    const { profile, lastUpdated, stats } = await res.json();
+
+    // Profile info
+    document.getElementById("profile-photo").src = profile.photo;
+    document.getElementById("profile-name").textContent = profile.name;
+    document.getElementById("profile-niche").textContent = profile.niche;
+    document.getElementById("profile-bio").textContent = profile.bio;
+
+    // Last updated
+    document.getElementById("last-updated").textContent = "Last updated: " + lastUpdated;
+
+    // Stats cards
+    const platformIcons = {
+      instagram: "https://cdn-icons-png.flaticon.com/512/2111/2111463.png",
+      tiktok: "https://cdn-icons-png.flaticon.com/512/3046/3046121.png",
+      youtube: "https://cdn-icons-png.flaticon.com/512/1384/1384060.png"
+    };
+    const container = document.getElementById("stats-container");
+    container.innerHTML = "";
+
+    for (const platform in stats) {
+      const s = stats[platform];
+      container.innerHTML += `
+        <div class="stat-card">
+          <div class="platform">
+            <img src="${platformIcons[platform]}" alt="${platform}">
+            ${platform.charAt(0).toUpperCase() + platform.slice(1)}
+          </div>
+          <div class="metric">Followers: <span>${s.followers?.toLocaleString() || s.subscribers?.toLocaleString()}</span></div>
+          <div class="metric">Engagement Rate: <span>${s.engagementRate}</span></div>
+          <div class="metric">Monthly Growth: <span>${s.monthlyGrowth}</span></div>
+        </div>
+      `;
+    }
+
+  } catch (error) {
+    console.error(error);
+    document.getElementById("stats-container").innerHTML = "<p>⚠️ Could not load stats.</p>";
+  }
+}
+
+loadStats();

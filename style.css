@@ -17,9 +17,7 @@ img, video {
     display: block;
 }
 
-/* =========================
-   Loader
-========================= */
+/* Loader */
 #loader {
     position: fixed;
     top: 0; left: 0;
@@ -339,8 +337,126 @@ nav ul li a:hover {
 }
 
 /* =========================
-   Contact
+   Stats Section
 ========================= */
+header {
+  background: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+header img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+
+header h1 {
+  margin: 0;
+}
+
+.niche {
+  color: #777;
+  font-size: 14px;
+}
+
+.bio {
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.social-links a {
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.container {
+  padding: 20px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.updated {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 20px auto;
+  max-width: 900px;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+
+.stat-card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  text-align: center;
+  transition: transform 0.2s ease-in-out;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+}
+
+.platform {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.platform img {
+  width: 24px;
+  height: 24px;
+}
+
+.metric {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #555;
+}
+
+.metric span {
+  font-weight: bold;
+  color: #222;
+}
+
+.chart-container {
+  background: white;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  max-width: 700px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    padding: 15px;
+    max-width: 95%;
+  }
+}
+
 /* =========================
    Contact Section
 ========================= */

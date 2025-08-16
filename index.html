@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pamela Mtanga</title>
     <link rel="stylesheet" href="style.css" />
+    
   </head>
   <body>
     <!-- Loader -->
@@ -25,24 +26,21 @@
       </ul>
     </nav>
 
-    <!-- Hero -->
-    <section class="hero" id="hero">
-      <div class="hero-left">
-        <img src="images/PamM-removebg-preview.png" alt="Pamela Mtanga" />
-      </div>
-      <div class="hero-right">
-        <div class="hero-text">
-          <h1>
-            <span class="first-name">Pamela</span>
-            <span class="last-name">Mtanga</span>
-          </h1>
-          <img
-            src="images/Cream_and_Beige_Illustrative_Background_Portrait_Document_A4-removebg-preview.png"
-            alt="Pamela Mtanga"
-          />
-        </div>
-      </div>
-    </section>
+   <!-- Hero Section -->
+        <section class="hero">
+  <div class="hero-left">
+    <img src="images/PamM-removebg-preview.png" alt="Pamela Mtanga">
+  </div>
+  <div class="hero-right">
+    <div class="hero-text">
+      <h1>
+        <span class="first-name">Pamela</span>
+        <span class="last-name">Mtanga</span>
+      </h1>
+      <img src="images/Cream_and_Beige_Illustrative_Background_Portrait_Document_A4-removebg-preview.png" alt="Pamela Mtanga">
+    </div>
+  </div>
+</section>
 
     <!-- About Section -->
         <section id="about">
@@ -113,6 +111,27 @@
       </div>
     </section>
 
+    <!-- Social Media Stats Section -->
+  <header class="profile-header">
+  <img id="profile-photo" src="" alt="Profile Photo">
+  <div class="profile-info">
+    <h1 id="profile-name"></h1>
+    <div class="niche" id="profile-niche"></div>
+    <div class="bio" id="profile-bio"></div>
+    <div class="social-links" id="social-links"></div>
+  </div>
+</header>
+
+<div class="container">
+  <div class="updated" id="last-updated"></div>
+  <div class="stats-grid" id="stats-container"></div>
+
+  <div class="chart-container">
+    <h2>Follower Growth (Past 6 Months)</h2>
+    <canvas id="growthChart"></canvas>
+  </div>
+</div>
+
     <section id="contact">
   <div class="contact-container">
     <!-- Heading -->
@@ -169,7 +188,7 @@
 <!-- Font Awesome CDN -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </body>
 </html>
