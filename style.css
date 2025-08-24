@@ -68,6 +68,16 @@ nav ul {
     list-style: none;
 }
 
+/* Hamburger Button (hidden by default) */
+.navbar-toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #b38b59;
+}
+
 nav ul li a {
     text-decoration: none;
     font-weight: 500;
@@ -80,7 +90,39 @@ nav ul li a:hover {
     color: #b38b59;
 }
 
-/* Hero Section */
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    /* Show hamburger button */
+    .navbar-toggle {
+        display: block;
+    }
+
+    /* Hide the menu by default */
+    nav ul {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.95);
+        padding: 1rem 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+
+    /* Show menu when active */
+    nav ul.active {
+        display: flex;
+    }
+
+    /* Center menu items vertically */
+    nav ul li {
+        text-align: center;
+        margin: 0.5rem 0;
+    }
+}
+
 /* Hero Section */
 .hero {
   display: flex;
@@ -758,4 +800,144 @@ form {
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
+}
+
+/* 🌟 Mobile Responsive Additions */
+
+/* Hero Section Responsive */
+@media (max-width: 1024px) {
+  .hero {
+    flex-direction: column;
+    height: auto;
+    padding: 2rem 1rem;
+  }
+  
+  .hero-left, .hero-right {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+
+  .hero::before {
+    display: none; /* hide vertical divider on smaller screens */
+  }
+
+  .hero-text {
+    padding-left: 0;
+  }
+
+  .hero-text h1 {
+    font-size: 3rem;
+  }
+
+  .first-name {
+    font-size: 2rem;
+  }
+
+  .last-name {
+    font-size: 3rem;
+    margin-top: -10px;
+  }
+
+  .hero-text img {
+    position: relative;
+    max-width: 70%;
+    opacity: 0.2;
+    top: 0;
+    right: 0;
+    transform: none;
+  }
+}
+
+/* About Section Responsive */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .about-content p {
+    max-width: 100%;
+  }
+
+  .about-video-wrapper,
+  .image-content {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+/* Portfolio Section Responsive */
+@media (max-width: 900px) {
+  .portfolio-slider {
+    padding: 1rem 0;
+  }
+
+  .slider-item {
+    flex: 0 0 250px;
+  }
+}
+
+@media (max-width: 600px) {
+  .slider-item {
+    flex: 0 0 200px;
+  }
+}
+
+/* Instagram Reels row responsive tweaks */
+@media (max-width: 768px) {
+  #instagram-reels .instagram-reels-row {
+    gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  #instagram-reels .instagram-reels-row {
+    gap: 10px;
+  }
+}
+
+/* Contact Section Responsive */
+@media (max-width: 768px) {
+  #contact {
+    padding: 3rem 2%;
+  }
+
+  .contact-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-image {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    margin: 1rem 0;
+    position: relative;
+    transform: none;
+  }
+
+  #contactForm {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+/* Footer Responsive */
+@media (max-width: 480px) {
+  .footer-socials a {
+    font-size: 1.2rem;
+    margin: 0 0.3rem;
+  }
+
+  .footer-name h3 {
+    font-size: 1.5rem;
+  }
+
+  .footer-nav a {
+    font-size: 0.9rem;
+    margin: 0.3rem;
+  }
 }

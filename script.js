@@ -19,6 +19,13 @@ window.addEventListener('load', () => {
   }, 5000); // fallback
 });
 
+const toggleButton = document.querySelector('.navbar-toggle');
+const menu = document.querySelector('.navbar-menu');
+
+toggleButton.addEventListener('click', () => {
+  menu.classList.toggle('active');
+});
+
 // Tabs & Slider
 const tabs = document.querySelectorAll('.tab-button');
 const slider = document.getElementById('slider');
