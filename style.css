@@ -12,6 +12,11 @@ body {
     scroll-behavior: smooth;
 }
 
+h3 {
+  text-align: center;
+  color: #b38b59; 
+}
+
 img, video {
     max-width: 100%;
     display: block;
@@ -34,9 +39,7 @@ img, video {
     animation: fadeIn 1s ease-in-out;
 }
 
-/* =========================
-   Navbar
-========================= */
+/* Navbar */
 nav {
     position: fixed;
     top: 0;
@@ -271,9 +274,7 @@ nav ul li a:hover {
   }
 }
 
-/* =========================
-   Portfolio
-========================= */
+/* Portfolio */
 #portfolio {
     padding: 5rem 5%;
     background-color: #f8f5f2;
@@ -336,130 +337,62 @@ nav ul li a:hover {
     cursor: pointer;
 }
 
-/* =========================
-   Stats Section
-========================= */
-header {
-  background: white;
-  padding: 20px;
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  border-bottom: 1px solid #eee;
-}
-
-header img {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-}
-
-header h1 {
-  margin: 0;
-}
-
-.niche {
-  color: #777;
-  font-size: 14px;
-}
-
-.bio {
-  font-size: 14px;
-  margin-top: 5px;
-}
-
-.social-links a {
-  margin-right: 10px;
-  display: inline-block;
-}
-
-.container {
-  padding: 20px;
-  max-width: 1000px;
-  margin: auto;
-}
-
-.updated {
-  font-size: 14px;
-  color: #777;
-  margin-bottom: 20px;
-}
-
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 20px;
-}
-
-.stats-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-  margin: 20px auto;
-  max-width: 900px;
-  padding: 0 15px;
-  box-sizing: border-box;
-}
-
-.stat-card {
-  background: white;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  text-align: center;
-  transition: transform 0.2s ease-in-out;
-}
-
-.stat-card:hover {
-  transform: translateY(-5px);
-}
-
-.platform {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: bold;
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-
-.platform img {
-  width: 24px;
-  height: 24px;
-}
-
-.metric {
-  margin: 8px 0;
-  font-size: 15px;
-  color: #555;
-}
-
-.metric span {
-  font-weight: bold;
-  color: #222;
-}
-
-.chart-container {
-  background: white;
-  margin-top: 40px;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  max-width: 700px;
+.embed-responsive {
   width: 100%;
-  box-sizing: border-box;
+  height: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(106, 76, 147, 0.2); /* soft shadow */
 }
 
-@media (max-width: 768px) {
-  .chart-container {
-    padding: 15px;
-    max-width: 95%;
+.box {
+  background: #fdfbff; /* soft card background */
+  border-radius: 20px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(106, 76, 147, 0.3);
+}
+
+/* First row: 2 big videos */
+.video-grid-large {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Second row: 3 smaller videos */
+.video-grid-small {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+}
+
+/* 🌸 Mobile-friendly layout */
+@media (max-width: 900px) {
+  .video-grid-large {
+    grid-template-columns: 1fr; /* stack the 2 large videos */
+  }
+
+  .video-grid-small {
+    grid-template-columns: 1fr 1fr; /* 2 per row for medium screens */
   }
 }
 
-/* =========================
-   Contact Section
-========================= */
+@media (max-width: 600px) {
+  .video-grid-small {
+    grid-template-columns: 1fr; /* stack all 3 on very small screens */
+  }
+}
+
+/* Contact Section */
 #contact {
     padding: 5rem 5%;
     background: #fff;
@@ -570,9 +503,7 @@ header h1 {
     transform: translateY(-50%) scale(1.02);
 }
 
-/* =========================
-   Responsive Adjustments
-========================= */
+/* Responsive Adjustments */
 @media (max-width: 992px) {
     .contact-wrapper {
         max-width: 700px;
@@ -680,6 +611,68 @@ form {
     }
 }
 
+/* Instagram Reels Section */
+#instagram-reels {
+  width: 95%;
+  max-width: 1400px;
+  margin: 2rem auto;
+}
+
+#instagram-reels h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #b38b59;
+}
+
+/* Single row layout for all reels */
+#instagram-reels .instagram-reels-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: nowrap;       /* Keep everything in one row */
+  overflow-x: auto;        /* Scroll horizontally if needed */
+  padding-bottom: 10px;    /* For scrollbar space */
+}
+
+/* Remove card styling for a clean IG look */
+#instagram-reels .box {
+  flex: 0 0 auto;          /* Prevent stretching */
+  overflow: hidden;
+  background: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+/* Instagram iframe styling (larger, portrait ratio) */
+#instagram-reels .box iframe {
+  width: 360px;   /* Slightly wider than before */
+  height: 640px;  /* 4:5 ratio, tall like IG reels */
+  border: none;
+  display: block;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  #instagram-reels .box iframe {
+    width: 300px;
+    height: 533px;
+  }
+}
+
+@media (max-width: 768px) {
+  #instagram-reels .box iframe {
+    width: 250px;
+    height: 444px;
+  }
+}
+
+@media (max-width: 480px) {
+  #instagram-reels .box iframe {
+    width: 200px;
+    height: 355px;
+  }
+}
+
 #footer {
   background: #f5f2ed;
   color: #b38b59;
@@ -761,9 +754,7 @@ form {
   }
 }
 
-/* =========================
-   Animations
-========================= */
+/* Animations */
 @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
